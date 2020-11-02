@@ -1,0 +1,10 @@
+<!--pages/ucenter/index/index.wxml-->
+<!-- <text>pages/ucenter/index/index.wxml</text> -->
+<view class="container">
+  <view class="profile-info" bindtap="goLogin">
+    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    <view class="info">
+      <text class="name">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+</view>
