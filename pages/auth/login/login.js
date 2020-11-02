@@ -62,5 +62,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  wxLogin: function(e) {
+    console.log('微信登录')
+  },
+  accountLogin: function () {
+    wx.navigateTo({
+      url: "/pages/auth/accountLogin/accountLogin"
+    });
   }
 })

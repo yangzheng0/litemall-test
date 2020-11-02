@@ -1,1 +1,48 @@
 /* pages/auth/login/login.wxss */
+.login-box  {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 0 40rpx;
+  margin-top: 200rpx;
+  background: #fff;
+}
+
+.wx-login-btn{
+  margin: 60rpx 0 40rpx 0;
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 30rpx;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-top-left-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+  border-bottom-right-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+  width: 90%;
+  letter-spacing: 3rpx;
+  margin-left: 5%;
+  position: flex;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  display: flex;
+}
+
+.account-login-btn{
+  color: #fff;
+  font-size: 30rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  width: 90%;
+  margin-left: 5%;
+  border-top-left-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+  border-bottom-right-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: linear-gradient(to right, #9a9ba1 0%, #9a9ba1 100%);
+}

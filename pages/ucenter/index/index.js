@@ -73,5 +73,23 @@ Page({
         url: '/pages/auth/login/login',
       })
     }
+  },
+  goOrder() {
+    if (this.data.hasLogin) {
+      try{
+        wx.setStorageSync('tab', 0);
+      } catch (e) {
+        console.log(e)
+      }
+
+      wx.navigateTo({
+        url: "/pages/ucenter/order/order"
+      });
+    } else {
+      wx.navigateTo({
+        url: "/pages/auth/login/login"
+      })
+    }
   }
+
 })
