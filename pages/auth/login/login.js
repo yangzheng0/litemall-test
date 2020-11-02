@@ -1,14 +1,11 @@
-// pages/ucenter/index/index.js
+// pages/auth/login/login.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo:{
-      nickName:'点击登陆',
-      avatarUrl:'/static/images/my.png'
-    }
+
   },
 
   /**
@@ -65,13 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  goLogin(){
-    if (!this.data.hasLogin) {
-      wx.navigateTo({
-        url: '/pages/auth/login/login',
-      })
-    }
   }
 })

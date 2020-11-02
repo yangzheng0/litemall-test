@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/catalog/catalog",
     "pages/cart/cart",
-    "pages/ucenter/index/index"
+    "pages/ucenter/index/index",
+    "pages/auth/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",

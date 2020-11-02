@@ -7,4 +7,6 @@
       <text class="name">{{userInfo.nickName}}</text>
     </view>
   </view>
+
+  <view class="separate"></view>
 </view>
