@@ -84,6 +84,27 @@ Page({
       })
     }
   },
+
+  exitLogin: function() {
+    wx.showModal({
+      title: '',
+      confirmColor:'b4282d',
+      content: '退出登录',
+      success: function (res) {
+        if (!res.confirm) {
+          return
+        }
+
+        util.request(api.AuthLogout, {}, 'POST');
+        app.globalData.hasLogin = false;
+        wx.removeStorageSync('token');
+        wx.removeStorageSync('userInfo');
+        wx.reLaunch({
+          url: '/pages/index/index',
+        })
+      }
+    })
+  },
   goOrder() {
     if (this.data.hasLogin) {
       try{

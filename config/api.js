@@ -4,4 +4,5 @@ var WxApiRoot = 'http://localhost:9080/wx/';
 
 module.exports = {
   AuthLoginByAccount: WxApiRoot + 'auth/login', //账号登录
+  AuthLogout: WxApiRoot+'auth/logout' // 退出登录
 }

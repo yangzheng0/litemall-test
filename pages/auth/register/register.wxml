@@ -1,2 +1,10 @@
 <!--pages/auth/register/register.wxml-->
-<text>pages/auth/register/register.wxml</text>
+<!-- <text>pages/auth/register/register.wxml</text> -->
+<view class="container">
+  <view class="form-box">
+    <view class="form-item">
+      <input class="username" value="{{username}}" bindinput="bindUsernameInput" placeholder="用户名" auto-focus />
+      <van-icon wx:if="{{ username.length > 0 }} " id = "clear-username" class="close" catchtap="clearInput"></van-icon>
+    </view>
+  </view>
+</view>
