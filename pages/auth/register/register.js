@@ -1,11 +1,19 @@
 // pages/auth/register/register.js
+var api = require('../../../config/api.js');
+var check = require('../../../utils/check.js');
+
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    username: '',
+    password: '',
+    confirmPassword: '',
+    mobile: '',
+    code:''
   },
 
   /**
@@ -62,5 +70,18 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  startRegister: function() {
+    var that = this
+
+    if (this.data.password.length < 6 || this.data.username.length<6) {
+      wx.showModal({
+        title:'错误信息',
+        content:"用户名和密码不得少于6位",
+        showCancel:false
+      })
+      return false
+    }
   }
 })
