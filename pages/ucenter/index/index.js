@@ -1,4 +1,8 @@
 // pages/ucenter/index/index.js
+var util = require('../../../utils/util.js');
+var api = require('../../../config/api.js');
+var user = require('../../../utils/user.js');
+var app = getApp();
 Page({
 
   /**
@@ -29,7 +33,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (app.globalData.hasLogin) {
+      let userInfo = wx.getStorageSync('userInfo');
+        this.setData({
+          userInfo: userInfo,
+          hasLogin: true
+        });
+    }
   },
 
   /**

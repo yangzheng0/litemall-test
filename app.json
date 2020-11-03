@@ -9,7 +9,9 @@
     "lib/vant-weapp/icon/index",
     "lib/vant-weapp/info/index",
     "pages/ucenter/order/order",
-    "pages/auth/accountLogin/accountLogin"
+    "pages/auth/accountLogin/accountLogin",
+    "pages/auth/register/register",
+    "pages/auth/reset/reset"
   ],
   "window": {
     "backgroundTextStyle": "light",
