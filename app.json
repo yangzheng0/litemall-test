@@ -12,7 +12,10 @@
     "pages/auth/accountLogin/accountLogin",
     "pages/auth/register/register",
     "pages/auth/reset/reset",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/goods/goods",
+    "pages/category/category",
+    "pages/coupon/coupon"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FFFFFF",
