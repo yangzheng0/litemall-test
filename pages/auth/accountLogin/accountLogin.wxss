@@ -59,3 +59,12 @@
   float: right;
   font-size: 28rpx;
 }
+
+.form-item .clear {
+  position: absolute;
+  top: 32rpx;
+  right: 18rpx;
+  z-index: 2;
+  display: block;
+  background: #fff;
+}

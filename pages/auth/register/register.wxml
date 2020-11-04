@@ -4,25 +4,25 @@
   <view class="form-box">
     <view class="form-item">
       <input class="username" value="{{username}}" bindinput="bindUsernameInput" placeholder="用户名" auto-focus />
-      <van-icon wx:if="{{ username.length > 0 }} " id = "clear-username" class="close" catchtap="clearInput"></van-icon>
+      <van-icon wx:if="{{ username.length > 0 }}" id = "clear-username" class="clear" name="close" catchtap="clearInput"/>
     </view>
     <view class="form-item">
       <input class="password" password value="{{password}}" bindinput="bindPasswordInput" placeholder="密码" auto-focus />
-      <van-icon wx:if="{{ password.length > 0 }} " id = "clear-password" class="close" catchtap="clearInput"></van-icon>
+      <van-icon wx:if="{{ password.length > 0 }}" id = "clear-password" class="clear" name="close" catchtap="clearInput"/>
     </view>
     <view class="form-item">
       <input class="password" password value="{{confirmPassword}}" bindinput="bindConfirmPasswordInput" placeholder="确认密码" auto-focus />
-      <van-icon wx:if="{{ password.length > 0 }} " id = "clear-confirm-password" class="close" catchtap="clearInput"></van-icon>
+      <van-icon wx:if="{{ confirmPassword.length > 0 }}" id = "clear-confirm-password"class="clear" name="close" catchtap="clearInput"></van-icon>
     </view>
     <view class="form-item">
       <input class="mobile" value="{{mobile}}" bindinput="bindMobileInput" placeholder="手机号" auto-focus />
-      <van-icon wx:if="{{ mobile.length > 0 }} " id = "clear-mobile" class="close" catchtap="clearInput"></van-icon>
+      <van-icon wx:if="{{ mobile.length > 0 }}" id = "clear-mobile" class="clear" name="close" catchtap="clearInput"></van-icon>
     </view>
 
     <view class="form-item-code">
       <view class="form-item code-item">
         <input class="code" value="{{code}}" bindinput="bindCodeInput" placeholder="验证码" />
-        <van-icon class="clear" id="clear-code" wx:if="{{ code.length > 0 }}" name="close" catchtap="clearInput"/>      
+        <van-icon class="clear" id="clear-code" wx:if="{{ code.length > 0 }}" class="clear" name="close" catchtap="clearInput"/>      
       </view>
       <view class="code-btn" bindtap="sendCode">获取验证码</view>
     </view>

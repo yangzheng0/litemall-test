@@ -1,4 +1,4 @@
-// pages/auth/reset/reset.js
+// pages/search/search.js
 Page({
 
   /**
@@ -62,29 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  bindMobileInput: function(e) {
-
-    this.setData({
-      mobile: e.detail.value
-    });
-  },
-  bindCodeInput: function(e) {
-
-    this.setData({
-      code: e.detail.value
-    });
-  },
-  bindPasswordInput: function(e) {
-
-    this.setData({
-      password: e.detail.value
-    });
-  },
-  bindConfirmPasswordInput: function(e) {
-
-    this.setData({
-      confirmPassword: e.detail.value
-    });
-  },
+  }
 })

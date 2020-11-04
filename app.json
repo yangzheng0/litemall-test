@@ -11,13 +11,16 @@
     "pages/ucenter/order/order",
     "pages/auth/accountLogin/accountLogin",
     "pages/auth/register/register",
-    "pages/auth/reset/reset"
+    "pages/auth/reset/reset",
+    "pages/search/search"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "litemall小程序商城",
+    "enablePullDownRefresh": false,
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "backgroundTextStyle": "dark"
   },
   "tabBar": {
     "list": [

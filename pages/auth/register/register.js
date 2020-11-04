@@ -83,5 +83,35 @@ Page({
       })
       return false
     }
-  }
+  },
+  bindUsernameInput: function(e) {
+
+    this.setData({
+      username: e.detail.value
+    });
+  },
+  bindPasswordInput: function(e) {
+
+    this.setData({
+      password: e.detail.value
+    });
+  },
+  bindConfirmPasswordInput: function(e) {
+
+    this.setData({
+      confirmPassword: e.detail.value
+    });
+  },
+  bindMobileInput: function(e) {
+
+    this.setData({
+      mobile: e.detail.value
+    });
+  },
+  bindCodeInput: function(e) {
+
+    this.setData({
+      code: e.detail.value
+    });
+  },
 })
