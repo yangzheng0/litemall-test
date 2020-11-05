@@ -12,6 +12,7 @@ Page({
     banner:[],
     channel:[],
     coupon:[],
+    groupons:[],
     goodsCount:0
   },
   //事件处理函数
@@ -30,7 +31,8 @@ Page({
         that.setData({
           banner:res.data.banner,
           channel:res.data.channel,
-          coupon: res.data.couponList
+          coupon: res.data.couponList,
+          groupons: res.data.grouponList
         })
       }
     })

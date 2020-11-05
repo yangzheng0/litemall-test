@@ -15,7 +15,8 @@
     "pages/search/search",
     "pages/goods/goods",
     "pages/category/category",
-    "pages/coupon/coupon"
+    "pages/coupon/coupon",
+    "pages/groupon/grouponList/grouponList"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FFFFFF",
