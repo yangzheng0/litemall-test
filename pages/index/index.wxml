@@ -74,6 +74,15 @@
                 <view class="text">
                   <view class="header">
                     <text class="name">{{item.name}}</text>
+                    <van-tag type="primary">{{item.grouponMember}}人成团</van-tag>
+                  </view>
+                  <view class="expire">
+                    <van-tag round type="warning">有效期至{{item.expireTime}}</van-tag>
+                  </view>
+                  <text class="desc">{{item.brief}}</text>
+                  <view class="price">
+                    <view class="counterPrice">现价： ￥{{item.retailPrice}}</view>
+                    <view class="retailPrice">团购价： ￥{{item.grouponPrice}}</view>
                   </view>
                 </view>
               </view>
@@ -81,4 +90,46 @@
           </view>
         </view>
     </view>
+
+    <view class="a-select a-brand">
+      <view class="h">
+        <navigator url="../brand/brand">
+          <text class="text">品牌制造直供</text>
+        </navigator>
+      </view>
+
+      <view class="b">
+        <view class="item item-1" wx:for="{{brands}}" wx:key="id">
+          <navigator url="/pages/brandDetail/brandDetail?id={{item.id}}">
+            <view class="wrap">
+              <image class="img" src="{{item.picUrl}}" mode="aspectFill"></image>
+              <view class="mt">
+                <text class="brand">{{item.name}}</text>
+                <text class="price">{{item.floorPrice}}</text>
+                <text class="unit">元起</text>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+
+    <view class="a-select a-new">
+      <view class="h">
+        <navigator url="../newGoods/newGoods">
+          <text class="txt">周一周四 · 新品首发</text>
+        </navigator>
+      </view>
+
+      <view class="b">
+        <view class="item" wx:for="{{newGoods}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+          <navigator url="../goods/goods?id={{item.id}}">
+            <image class="img" src="{{item.picUrl}}" backgroud-size="cover"></image>
+            <text class="name">{{item.name}}</text>
+            <text class="price">￥{{item.retailPrice}}</text>
+          </navigator>
+        </view>
+      </view>
+    </view>
+
 </view>

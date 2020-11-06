@@ -16,7 +16,10 @@
     "pages/goods/goods",
     "pages/category/category",
     "pages/coupon/coupon",
-    "pages/groupon/grouponList/grouponList"
+    "pages/groupon/grouponList/grouponList",
+    "pages/brand/brand",
+    "pages/brandDetail/brandDetail",
+    "pages/newGoods/newGoods"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FFFFFF",
@@ -56,6 +59,7 @@
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-    "van-icon": "./lib/vant-weapp/icon/index"
+    "van-icon": "./lib/vant-weapp/icon/index",
+    "van-tag": "./lib/vant-weapp/tag/index"
   }
 }

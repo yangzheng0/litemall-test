@@ -217,3 +217,110 @@
   line-height: 50rpx;
   font-size: 30rpx;
 }
+
+.a-groupon .b .desc {
+  width: 476rpx;
+  display: block;
+  color: #999;
+  line-height: 50rpx;
+  font-size: 25rpx;
+}
+
+.a-groupon .b .price {
+  width: 476rpx;
+  display: flex;
+  color: #ab956d;
+  line-height: 50rpx;
+  font-size: 33rpx;
+}
+
+
+.a-groupon .b .counterPrice {
+  text-decoration: line-through;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.a-groupon .b .retailPrice {
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: #a78845;
+}
+
+.a-brand .b {
+  width: 750rpx;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.a-brand .wrap {
+  position: relative;
+}
+
+.a-brand .img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.a-brand .mt {
+  position: absolute;
+  z-index: 2;
+  padding: 27rpx 31rpx;
+  left: 0;
+  top: 0;
+}
+
+.a-brand .item-1 {
+  float: left;
+  width: 375rpx;
+  height: 252rpx;
+  overflow: hidden;
+  border-top: 1rpx solid #fff;
+  margin-left: 1rpx;
+}
+
+.a-brand .item-1:nth-child(2n+1) {
+  margin-left: 0;
+  width: 374rpx;
+}
+
+.a-brand .item-1 .img {
+  width: 375rpx;
+  height: 253rpx;
+}
+
+.a-brand .mt .brand {
+  display: block;
+  font-size: 33rpx;
+  height: 43rpx;
+  color: #fff;
+}
+.a-brand .mt .price, .a-brand .mt .unit {
+  font-size: 25rpx;
+  color: #fff;
+}
+
+.a-new .b {
+  width: 750rpx;
+  height: auto;
+  overflow: hidden;
+  padding: 0 31rpx 45rpx 31rpx;
+}
+
+.a-new .b .item {
+  float: left;
+  width: 302rpx;
+  margin-top: 10rpx;
+  margin-left: 21rpx;
+  margin-right: 21rpx;
+}
+
+.a-new .b .img {
+  width: 302rpx;
+  height: 302rpx;
+}
+
+
+

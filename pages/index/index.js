@@ -13,6 +13,8 @@ Page({
     channel:[],
     coupon:[],
     groupons:[],
+    brands:[],
+    newGoods:[],
     goodsCount:0
   },
   //事件处理函数
@@ -32,7 +34,9 @@ Page({
           banner:res.data.banner,
           channel:res.data.channel,
           coupon: res.data.couponList,
-          groupons: res.data.grouponList
+          groupons: res.data.grouponList,
+          newGoods: res.data.newGoodsList,
+          brands: res.data.brandList
         })
       }
     })
