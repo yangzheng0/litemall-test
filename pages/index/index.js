@@ -15,6 +15,8 @@ Page({
     groupons:[],
     brands:[],
     newGoods:[],
+    hotGoods:[],
+    topics:[],
     goodsCount:0
   },
   //事件处理函数
@@ -36,6 +38,8 @@ Page({
           coupon: res.data.couponList,
           groupons: res.data.grouponList,
           newGoods: res.data.newGoodsList,
+          hotGoods: res.data.hotGoodsList,
+          topics: res.data.topicList,
           brands: res.data.brandList
         })
       }

@@ -19,6 +19,7 @@
     "pages/groupon/grouponList/grouponList",
     "pages/brand/brand",
     "pages/brandDetail/brandDetail",
+    "pages/hotGoods/hotGoods",
     "pages/newGoods/newGoods"
   ],
   "window": {
