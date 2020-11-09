@@ -400,4 +400,56 @@
   font-size: 33rpx;
 }
 
+.a-topic .b {
+  height: 522rpx;
+  width: 750rpx;
+  padding: 0 0 48rpx 0;
+}
+
+.a-topic .b .list {
+  height: 533rpx;
+  width: 750rpx;
+  white-space: nowrap;
+}
+
+.a-topic .b .item {
+  display: inline-block;
+  height: 533rpx;
+  width: 680.5rpx;
+  margin-left: 30rpx;
+  overflow: hidden;
+}
+
+.a-topic .b .item:last-child {
+  margin-right: 30rpx;
+}
+
+
+.a-topic .b .img {
+  height: 387.5rpx;
+  width: 680.5rpx;
+  margin-bottom: 30rpx;
+}
+
+.a-topic .b .np {
+  height: 35rpx;
+  margin-bottom: 13.5rpx;
+  color: #333;
+  font-size: 30rpx;
+}
+
+.a-topic .b .np .price {
+  margin-left: 20.8rpx;
+  color: #ab956d;
+}
+
+.a-topic .b .desc {
+  display: block;
+  height: 30rpx;
+  color: #999;
+  font-size: 24rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 

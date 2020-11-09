@@ -20,6 +20,7 @@
     "pages/brand/brand",
     "pages/brandDetail/brandDetail",
     "pages/hotGoods/hotGoods",
+    "pages/topicDetail/topicDetail",
     "pages/newGoods/newGoods"
   ],
   "window": {
