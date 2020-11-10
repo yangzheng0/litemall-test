@@ -17,6 +17,7 @@ Page({
     newGoods:[],
     hotGoods:[],
     topics:[],
+    floorGoods:[],
     goodsCount:0
   },
   //事件处理函数
@@ -40,6 +41,7 @@ Page({
           newGoods: res.data.newGoodsList,
           hotGoods: res.data.hotGoodsList,
           topics: res.data.topicList,
+          floorGoods: res.data.floorGoodsList,
           brands: res.data.brandList
         })
       }

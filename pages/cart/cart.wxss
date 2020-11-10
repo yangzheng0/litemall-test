@@ -1,1 +1,44 @@
 /* pages/cart/cart.wxss */
+
+page{
+  height: 100%;
+  width: 100%;
+  background: #f4f4f4;
+}
+
+.container {
+  background: #f4f4f4;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.no-login{
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.no-login .c{
+  width: 100%;
+  height: auto;
+  margin-top: 400rpx;
+}
+.no-login .c text{
+  margin: 0 auto;
+  display: block;
+  width: 258rpx;
+  height: 59rpx;
+  line-height: 29rpx;
+  text-align: center;
+  font-size: 35rpx;
+  color: #999;
+}
+.no-login button{
+  width: 90%;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 30rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+}

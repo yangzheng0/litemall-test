@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/cart/cart",
+    "pages/catalog/catalog",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/catalog/catalog",
-    "pages/cart/cart",
     "pages/ucenter/index/index",
     "pages/auth/login/login",
     "lib/vant-weapp/icon/index",

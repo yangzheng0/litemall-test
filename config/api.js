@@ -4,6 +4,12 @@ var WxApiRoot = 'http://localhost:9080/wx/';
 
 module.exports = {
   IndexUrl: WxApiRoot + 'home/index', //首页数据接口
+
+  CatalogList: WxApiRoot + 'catalog/index', //分类目录全部分类数据接口
+  CatalogCurrent: WxApiRoot + 'catalog/current', //分类目录当前分类数据接口
+  
   AuthLoginByAccount: WxApiRoot + 'auth/login', //账号登录
-  AuthLogout: WxApiRoot+'auth/logout' // 退出登录
+  AuthLogout: WxApiRoot+'auth/logout', // 退出登录
+
+  GoodsCount: WxApiRoot + 'goods/count', //统计商品总数
 }
