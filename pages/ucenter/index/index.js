@@ -33,13 +33,25 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    debugger
     if (app.globalData.hasLogin) {
       let userInfo = wx.getStorageSync('userInfo');
         this.setData({
           userInfo: userInfo,
           hasLogin: true
         });
+
+        let that = this;
+        util.request(api.UserIndex).then(function(res) {
+          if (res.errno === 0) {
+            that.setData({
+              order: res.data.order
+            });
+          }
+        });
     }
+
+   
   },
 
   /**

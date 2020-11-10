@@ -10,7 +10,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    hasLogin:false
+    hasLogin:false,
+    cartGoods:[],
+    cartTotal:0
   },
 
   /**
@@ -34,6 +36,10 @@ Page({
     if (app.globalData.hasLogin) {
       this.getCartList();
     }
+
+    this.setData({
+      hasLogin:app.globalData.hasLogin
+    })
   },
 
   /**
@@ -71,7 +77,16 @@ Page({
 
   },
   getCartList: function () {
-
+    let that = this
+    util.request(api.CartList).then(function(res){
+      
+      if(res.errno === 0) {
+        that.setData({
+          cartGoods: res.data.cartList,
+          cartTotal:res.data.cartTotal
+        })
+      }
+    })
   },
   goLogin() {
     wx.navigateTo({

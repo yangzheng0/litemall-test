@@ -12,4 +12,8 @@ module.exports = {
   AuthLogout: WxApiRoot+'auth/logout', // 退出登录
 
   GoodsCount: WxApiRoot + 'goods/count', //统计商品总数
+
+  CartList: WxApiRoot + 'cart/index', //获取购物车的数据
+
+  UserIndex: WxApiRoot + 'user/index', //个人页面用户相关信息
 }
