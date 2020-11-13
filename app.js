@@ -24,6 +24,7 @@ App({
     }).catch(() => {
       this.globalData.hasLogin = false;
     });
+    console.log("app.js hasLogin = "+this.globalData.hasLogin);
   },
   globalData: {
     hasLogin: false
