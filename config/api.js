@@ -14,6 +14,7 @@ module.exports = {
   GoodsCount: WxApiRoot + 'goods/count', //统计商品总数
 
   CartList: WxApiRoot + 'cart/index', //获取购物车的数据
+  CartChecked: WxApiRoot + 'cart/checked', // 选择或取消选择商品
 
   UserIndex: WxApiRoot + 'user/index', //个人页面用户相关信息
 }

@@ -126,5 +126,20 @@ Page({
         }
       }
     });
+  },
+
+  clearInput: function (e) {
+    switch (e.currentTarget.id) {
+      case 'clear-username' :
+        this.setData({
+          username: ''
+        });
+        break;
+      case 'clear-password' :
+        this.setData({
+          password: ''
+        });
+        break;
+    }
   }
 })
