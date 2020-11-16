@@ -212,5 +212,28 @@ Page({
       cartGoods: this.data.cartGoods
     });
     this.updateCart(cartItem.productId, cartItem.goodsId, number, cartItem.id);
+  },
+  updateCart: function (productId,goodsId,number,id) {
+    let that = this;
+    util.request(api.CartUpdate, {
+      productId:productId,
+      goodsId:goodsId,
+      number:number,
+      id:id
+    },'POST').then(function(res) {
+      that.setData({
+        checkedAllStatus:that.isCheckedAll()
+      })
+    })
+  },
+  addNumber: function(event) {
+    let itemIndex = event.target.dataset.itemIndex;
+    let cartItem = this.data.cartGoods[itemIndex];
+    let number = cartItem.number + 1;
+    cartItem.number = number;
+    this.setData({
+      cartGoods:this.data.cartGoods
+    });
+    this.updateCart(cartItem.productId,cartItem.goodsId,number,cartItem.id)
   }
 })

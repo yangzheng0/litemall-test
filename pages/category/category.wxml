@@ -1,2 +1,10 @@
-<!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<view class="container">
+  <view class="cae-nav">
+    <scroll-view scroll-x="true" class="cate-nav-body" style="width: 750rpx;" scroll-left="{{scrollLeft}}">
+      <view wx:for="{{navList}}" class="item {{ id == item.id ? 'active' : ''}}" wx:key="id" data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCate">
+        <view class="name">{{item.name}}</view>
+      </view>
+
+    </scroll-view>
+  </view>
+</view>
