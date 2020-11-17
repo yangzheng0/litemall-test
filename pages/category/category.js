@@ -10,7 +10,9 @@ Page({
     navList:[],
     id:0,
     scrollLeft:0,
+    scrollTop:0,
     currentCategory:{},
+    goodsList:[],
     scrollHeight:0
   },
 
@@ -99,5 +101,31 @@ Page({
         })
       }
     })
+  },
+
+  switchCate: function (event) {
+    if (this.data.id == event.currentTarget.dataset.id){
+      return false
+    }
+
+    var that = this;
+    var clientX = event.detail.x;
+    var currentTarget = event.currentTarget;
+
+    if (clientX < 60) {
+      that.setData({
+        scrollLeft:currentTarget.offsetLeft - 60
+      })
+    } else if (clientX > 330) {
+      that.setData({
+        scrollLeft:currentTarget.offsetLeft
+      })
+    }
+
+    this.setData({
+      id: event.currentTarget.dataset.id
+    });
+
+    this.getCategoryInfo();
   }
 })
