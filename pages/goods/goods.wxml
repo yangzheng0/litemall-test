@@ -1,2 +1,93 @@
 <!--pages/goods/goods.wxml-->
-<text>pages/goods/goods.wxml</text>
+<view class="container">
+  <swiper class="goodsimgs" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+    <swiper-item wx:for="{{goods.gallery}}" wx:key="*this">
+      <image src="{{item}}" backgroud-size="cover"></image>
+    </swiper-item>
+  </swiper>
+  <!--分享-->
+  <view class="goods_name">
+    <view class="goods_name_left">
+      {{goods.name}}
+    </view>
+    <view hidden="{{!canShare}}" bindtap="shareFrindOrCircle" class="goods_name_right">分享</view>
+  </view>
+  <view class="share-pop-box" hidden="{{!openShare}}">
+    <view class="share-pop">
+      <view class="close" bindtap="closeShare">
+        <van-icon class="icon" name="cross"></van-icon>
+      </view>
+      <view class="share-info">
+        <button class="sharebtn" open-type="share" wx:if="{{!isGroupon}}">
+          <image class="sharebtn_image" src="/static/images/wechat.png"></image>
+          <view class="sharebtn_text">分享给好友</view>
+        </button>
+        <button class="savesharebtn" open-type="openSetting" bindopensetting="handleSetting" wx:if="{{(!isGroupon) && (!canWrite)}}">
+          <image class="sharebtn_image" src="/static/images/friend.png"></image>
+          <view class="sharebtn_text">生成海报</view>
+        </button>
+        <button class="savesharebtn" open-type="openSetting" bindopensetting="handleSetting" wx:if="{{(!isGroupon) && (canWrite)}}">
+          <image class="sharebtn_image" src="/static/images/friend.png"></image>
+          <view class="sharebtn_text">生成海报</view>
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <view class="goods-info">
+    <view class="c">
+      <text class="desc">{{goods.brief}}</text>
+      <view class="price">
+        <view class="counterPrice">原价：￥{{goods.counterPrice}}</view>
+        <view class="retailPrice">现价：￥{{checkedSpecPrice}}</view>
+      </view>
+
+      <view class="brand" wx:if="{{brand.name}}">
+        <navigator url="../brandDetail/brandDetail?id={{brand.id}}">
+          <text>{{brand.name}}</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-nav section-attr" bindtap="switchAttrPop">
+    <view class="t">
+      {{checkedSpecText}}
+    </view>
+    <van-icon class="i" name="arrow"></van-icon>
+  </view>
+
+  <view class="comments" wx:if="{{comment.count > 0}}">
+    <view class="h">
+      <navigator url="/pages/comment/comment?valueId={{goods.id}}&type=0">
+        <text class="t">评价({{comment.count > 999 ? '999' : comment.count}})</text>
+        <view class="i">
+          查看全部
+          <van-icon name="arrow"></van-icon>
+        </view>
+      </navigator>
+    </view>
+
+    <view class="b">
+      <view class="item" wx:for="{{comment.data}}" wx:key="id">
+        <view class="info">
+          <view class="user">
+            <image src="{{item.avatar}}"></image>
+            <text>{{item.nickname}}</text>
+          </view>
+          <view class="time">{{item.addTime}}</view>
+        </view>
+      </view>
+      <view class="content">
+        {{item.content}}
+      </view>
+      <view class="imgs" wx:if="{{item.picList.length > 0}}">
+        <image class="img" wx:for="{{item.picList}}" wx:key="*this" wx:for="#this" wx:for-item="iitem" src="{{iitem}}"></image>
+      </view>
+      <view class="customer-service" wx:if="{{item.adminContent}}">
+        <text class="u">商家回复：</text>
+        <text class="c">{{item.adminContent}}</text>
+      </view>
+    </view>
+  </view>
+</view>
