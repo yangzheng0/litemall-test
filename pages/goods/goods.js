@@ -19,6 +19,7 @@ Page({
     specificationList: [],
     productList: [],
     relatedGoods: [],
+    attribute: [],
     cartGoodsCount: 0,
     userHasCollect: 0,
     number:1,

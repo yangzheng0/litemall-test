@@ -234,3 +234,11 @@
   color: #333;
   margin-left: 31.25rpx;
 }
+
+.section-nav .i {
+  float: right;
+  width: 52rpx;
+  height: 52rpx;
+  margin-right: 16rpx;
+  margin-top: 28rpx;
+}
