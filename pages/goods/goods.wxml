@@ -77,17 +77,50 @@
           </view>
           <view class="time">{{item.addTime}}</view>
         </view>
-      </view>
-      <view class="content">
+
+        <view class="content">
         {{item.content}}
-      </view>
-      <view class="imgs" wx:if="{{item.picList.length > 0}}">
-        <image class="img" wx:for="{{item.picList}}" wx:key="*this" wx:for="#this" wx:for-item="iitem" src="{{iitem}}"></image>
-      </view>
-      <view class="customer-service" wx:if="{{item.adminContent}}">
-        <text class="u">商家回复：</text>
-        <text class="c">{{item.adminContent}}</text>
+        </view>
+        <view class="imgs" wx:if="{{item.picList.length > 0}}">
+          <image class="img" wx:for="{{item.picList}}" wx:key="*this" wx:for-item="iitem" src="{{iitem}}"></image>
+        </view>
+        <view class="customer-service" wx:if="{{item.adminContent}}">
+          <text class="u">商家回复：</text>
+          <text class="c">{{item.adminContent}}</text>
+        </view>
       </view>
     </view>
   </view>
+
+  <view class="goods-attr">
+    <view class="t">
+      商品参数
+    </view>
+    <view class="l">
+      <view class="item" wx:for="{{attribute}}" wx:key = "name">
+        <text class="left">{{item.attribute}}</text>
+        <text class="right">{{item.value}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="detail">
+    <import src="/lib/wxParse/wxParse.wxml"></import>
+    <template is="wxParse" data="{{wxParseData:goodsDetail.nodes}}"></template>
+  </view>
+
+  <view class="common-problem">
+
+  </view>
+
+  <!--大家都在看-->
+  <view class="related-goods">
+
+  </view>
+
+
+</view>
+<!--规格选择界面-->
+<view class="attr-pop-box" hidden="{{!openAttr}}">
+
 </view>
