@@ -18,7 +18,7 @@ module.exports = {
   CartList: WxApiRoot + 'cart/index', //获取购物车的数据
   CartChecked: WxApiRoot + 'cart/checked', // 选择或取消选择商品
   CartUpdate: WxApiRoot + 'cart/update', // 更新购物车的商品
-  
+
 
   UserIndex: WxApiRoot + 'user/index', //个人页面用户相关信息
 }
