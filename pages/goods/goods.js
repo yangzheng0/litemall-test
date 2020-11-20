@@ -136,7 +136,8 @@ Page({
           comment:res.data.comment,
           canShare:res.data.share,
           brand:res.data.brand,
-          checkedSpecPrice: res.data.info.retailPrice
+          checkedSpecPrice: res.data.info.retailPrice,
+          tmpPicUrl: _tmpPicUrl
         })
       }
     }) 
@@ -161,5 +162,11 @@ Page({
         openAttr: !this.data.openAttr
       })
     } 
+  },
+
+  closeAttr: function () {
+    this.setData({
+      openAttr: false
+    })
   }
 })
