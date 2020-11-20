@@ -12,10 +12,13 @@ module.exports = {
   AuthLogout: WxApiRoot+'auth/logout', // 退出登录
 
   GoodsCount: WxApiRoot + 'goods/count', //统计商品总数
+  GoodsCategory: WxApiRoot + 'goods/category', //获得分类数据
   GoodsDetail: WxApiRoot + 'goods/detail', //获得商品的详情
 
   CartList: WxApiRoot + 'cart/index', //获取购物车的数据
   CartChecked: WxApiRoot + 'cart/checked', // 选择或取消选择商品
+  CartUpdate: WxApiRoot + 'cart/update', // 更新购物车的商品
+
 
   UserIndex: WxApiRoot + 'user/index', //个人页面用户相关信息
 }

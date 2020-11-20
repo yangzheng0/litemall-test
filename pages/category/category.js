@@ -1,18 +1,42 @@
 // pages/category/category.js
+var util = require('../../utils/util.js');
+var api = require('../../config/api.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    navList:[],
+    id:0,
+    scrollLeft:0,
+    scrollTop:0,
+    currentCategory:{},
+    goodsList:[],
+    scrollHeight:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 页面初始化 options 为页面跳转所带来的参数
+    var that = this;
+    if (options.id) {
+      that.setData({
+        id:parseInt(options.id)
+      })
+    }
 
+    wx.getSystemInfo({
+        success: function(res) {
+          that.setData({
+            scrollHeight:res.windowHeight
+          })
+      },
+    })
+
+    this.getCategoryInfo();
   },
 
   /**
@@ -62,5 +86,46 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  getCategoryInfo: function () {
+    let that = this;
+
+    util.request(api.GoodsCategory, {
+      id: this.data.id
+    }).then(function(res) {
+      if (res.errno == 0) {
+        that.setData({
+          navList: res.data.brotherCategory,
+          currentCategory:res.data.currentCategory
+        })
+      }
+    })
+  },
+
+  switchCate: function (event) {
+    if (this.data.id == event.currentTarget.dataset.id){
+      return false
+    }
+
+    var that = this;
+    var clientX = event.detail.x;
+    var currentTarget = event.currentTarget;
+
+    if (clientX < 60) {
+      that.setData({
+        scrollLeft:currentTarget.offsetLeft - 60
+      })
+    } else if (clientX > 330) {
+      that.setData({
+        scrollLeft:currentTarget.offsetLeft
+      })
+    }
+
+    this.setData({
+      id: event.currentTarget.dataset.id
+    });
+
+    this.getCategoryInfo();
   }
 })
