@@ -137,6 +137,7 @@ Page({
           canShare:res.data.share,
           brand:res.data.brand,
           checkedSpecPrice: res.data.info.retailPrice,
+          specificationList: res.data.specificationList,
           tmpPicUrl: _tmpPicUrl
         })
       }
