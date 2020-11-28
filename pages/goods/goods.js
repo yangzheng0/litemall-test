@@ -143,6 +143,7 @@ Page({
       }
     }) 
   },
+  
   shareFrindOrCircle: function() {
     if (this.data.openShare === false) {
       this.setData({
