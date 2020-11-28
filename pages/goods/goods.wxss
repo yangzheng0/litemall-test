@@ -243,6 +243,81 @@
   margin-top: 28rpx;
 }
 
+.comments {
+  width: 100%;
+  height: auto;
+  padding-left: 30rpx;
+  background: #fff;
+  margin: 20rpx 0;
+}
+
+.comments .h {
+  height: 102.5rpx;
+  line-height: 100.5rpx;
+  width: 718.75rpx;
+  padding-right: 16rpx;
+}
+
+.comments .h .t{
+  display: block;
+  float: left;
+  width: 50%;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.comments .h .i {
+  display: block;
+  float: right;
+  width: 164rpx;
+  height: 100.5rpx;
+  line-height: 100.5rpx;
+  background-size: 52rox;
+}
+
+.comments .b {
+  height: auto;
+  width: 720rpx;
+}
+
+.comments .item {
+  height: auto;
+  width: 720rpx;
+  overflow: hidden;
+  border-top: 1px solid #d9d9d9;
+}
+
+.comments .info {
+  height: 127rpx;
+  width: 100%;
+  padding: 33rpx 0 27rpx 0;
+}
+
+.comments .user {
+  float: left;
+  width: auto;
+  height: 67rpx;
+  line-height: 67rpx;
+  font-size: 0;
+}
+
+.comments .user .image {
+  float: left;
+  width: 67rpx;
+  height: 67rpx;
+  margin-right: 17rpx;
+  border-radius: 50%;
+}
+
+.comments .user text {
+  display: inline-block;
+  width: auto;
+  height: 66rpx;
+  overflow: hidden;
+  font-size: 29rpx;
+  line-height: 66rpx;
+}
+
 .attr-pop-box {
   width: 100%;
   height: 100%;
@@ -296,7 +371,6 @@
 .attr-pop .info {
   float: left;
   height: 177rpx;
-  width: 177rpx;
   display: flex;
   align-items: center;
 }
@@ -320,4 +394,29 @@
   width: 100%;
   height: auto;
   overflow: hidden;
+}
+
+.spec-con .name {
+  margin-bottom: 6rpx;
+  font-size: 29rpx;
+  color: #333;
+}
+
+.spec-con .values {
+  height: auto;
+  margin-bottom: 10rpx;
+  font-size: 0;
+}
+
+.spec-con .value {
+  display: inline-block;
+  height: 62rpx;
+  padding: 0 35rpx;
+  line-height: 56rpx;
+  text-align: center;
+  margin-right: 25rpx;
+  margin-bottom: 16.5rpx;
+  border: 1px solid #333;
+  font-size: 25rpx;
+  color: #333;
 }
