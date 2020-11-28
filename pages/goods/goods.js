@@ -152,6 +152,7 @@ Page({
       return false;
     }
   },
+  // 关闭分享
   closeShare: function () {
     this.setData({
       openShare:false
