@@ -68,3 +68,42 @@
   font-size: 24rpx;
   color: #999;
 }
+
+.cate-item .b {
+  width: 750rpx;
+  height: 24rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.cate-item .b .item{
+  float: left;
+  background: #fff;
+  width: 365rpx;
+  margin-bottom: 6.25rpx;
+  padding-bottom: 33.333rpx;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+}
+
+.cate-item .b .item-b {
+  margin-left: 6.25rpx;
+}
+
+.cate-item .item .img {
+  width: 302rpx;
+  height: 302rpx;
+}
+
+.cate-item .item .name {
+  display: block;
+  width: 365.625rpx;
+  height: 35rpx;
+  margin: 11.5rpx 0 22rpx 0;
+  text-align: center;
+  overflow: hidden;
+  padding: 0 20rpx;
+  font-size: 30rpx;
+  color: #333;
+}
