@@ -1,6 +1,6 @@
 // pages/goods/goods.js
 var app = getApp();
-var WxParse = require('../../lib/wxParse/wxParse.js')
+var WxParse = require('../../lib/wxParse/wxParse.js');
 var util = require('../../utils/util.js')
 var api = require('../../config/api.js')
 
@@ -138,12 +138,40 @@ Page({
           brand:res.data.brand,
           checkedSpecPrice: res.data.info.retailPrice,
           specificationList: res.data.specificationList,
+          // 选择规格时，默认展示第一张图片
           tmpPicUrl: _tmpPicUrl
         })
+
+        // 如果是通过分享的团购参加团购，则团购项目应该与分享的一致并且不可更改
+        if (that.data.isGroupon) {
+          let groupons = that.data.groupon;
+          for (var i = 0; i < groupons.length; i++) {
+            if (groupons[i].id != that.data.grouponLink.rulesId) {
+              groupons.splice(i, 1);
+            }
+          }
+          groupons[0].checked = true;
+          //重设团购规格
+          that.setData({
+            groupon: groupons
+          });
+
+        }
+
+        if (res.data.userHasCollect == 1) {
+          that.setData({
+            collect: true
+          });
+        } else {
+          that.setData({
+            collect: false
+          });
+        }
+        WxParse.wxParse('goodsDetail','html',res.data.info.detail,that)
       }
     }) 
   },
-  
+  // 开启分享
   shareFrindOrCircle: function() {
     if (this.data.openShare === false) {
       this.setData({

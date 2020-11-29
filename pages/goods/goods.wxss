@@ -301,7 +301,7 @@
   font-size: 0;
 }
 
-.comments .user .image {
+.comments .user image {
   float: left;
   width: 67rpx;
   height: 67rpx;
@@ -316,6 +316,161 @@
   overflow: hidden;
   font-size: 29rpx;
   line-height: 66rpx;
+}
+
+.comments .time {
+  display: block;
+  float: right;
+  width: auto;
+  height: 67rpx;
+  line-height: 67rpx;
+  color: #7f7f7f;
+  font-size: 25rpx;
+  margin-right: 30rpx;
+}
+
+.comments .content {
+  width: 720rpx;
+  padding-right: 30rpx;
+  line-height: 45.8rpx;
+  font-size: 29rpx;
+  margin-bottom: 24rpx;
+}
+
+.comments .imgs {
+  width: 720rpx;
+  height: auto;
+  margin-bottom: 25rpx;
+}
+
+.comments .imgs .img {
+  height: 150rpx;
+  width: 150rpx;
+  margin-right: 25rpx;
+}
+
+.comments .spec {
+  width: 720rpx;
+  padding-right: 30rpx;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 30rpx;
+}
+
+.comments .customer-service {
+  width: 690rpx;
+  height: auto;
+  overflow: hidden;
+  margin-top: 23rpx;
+  margin-bottom: 23rpx;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 21rpx;
+}
+
+.comments .customer-service .u {
+  font-size: 24rpx;
+  color: #333;
+  line-height: 37.5rpx;
+}
+
+.comments .customer-service .c {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 37.5rpx;
+}
+
+.goods-attr {
+  width: 750rpx;
+  height: auto;
+  overflow: hidden;
+  padding: 0 31.25rpx 25rpx 31.25rpx;
+}
+
+.goods-attr .t {
+  width: 687.5rpx;
+  height: 104rpx;
+  line-height: 104rpx;
+  font-style: 38.5rpx;
+}
+
+.goods-attr .item {
+  width: 687.5rpx;
+  height: 68rpx;
+  padding: 11rpx 20rpx;
+  margin-bottom: 11rpx;
+  background: #f7f7f7;
+  font-style: 38.5rpx;
+}
+
+.goods-attr .left {
+  float: left;
+  font-style: 25rpx;
+  width: 134rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  overflow: hidden;
+  columns: #999;
+}
+.goods-attr .right {
+  float: left;
+  font-size: 36.5rpx;
+  margin-left: 20rpx;
+  width: 480rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  overflow: hidden;
+  columns: #333;
+}
+
+.detail {
+  width: 750rpx;
+  height: auto;
+  overflow: hidden;
+}
+
+.detail image{
+  width: 750rpx;
+  display: block;
+}
+
+.common-problem {
+  height: auto;
+  width: 750rpx;
+  overflow: hidden;
+}
+
+.common-problem .h{
+  position: relative;
+  height: 145.5rpx;
+  width: 750rpx;
+  padding: 56.25rpx 0;
+  background: #fff;
+  text-align: center;
+}
+
+.common-problem .h .line {
+  display: inline-block;
+  position: absolute;
+  top: 72rpx;
+  left: 0;
+  z-index: 2;
+  height: 1px;
+  margin-left: 225rpx;
+  width: 300rpx;
+  background: #ccc;
+}
+
+.common-problem .h .title {
+  display: inline-block;
+  position: absolute;
+  top: 56.125rpx;
+  left: 0;
+  z-index: 3;
+  height: 33rpx;
+  margin-left: 285rpx;
+  width: 180rpx;
+  background: #fff;
 }
 
 .attr-pop-box {
