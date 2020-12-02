@@ -168,9 +168,26 @@ Page({
           });
         }
         WxParse.wxParse('goodsDetail','html',res.data.info.detail,that)
+        // 获取推荐商品
+        that.getGoodsRelated()
       }
     }) 
   },
+
+  // 获取推荐商品
+  getGoodsRelated: function() {
+    let that = this;
+    util.request(api.GoodsRelated, {
+      id: that.data.id
+    }).then(function(res) {
+      if (res.errno === 0) {
+        that.setData({
+          relatedGoods: res.data.list,
+        });
+      }
+    });
+  },
+
   // 开启分享
   shareFrindOrCircle: function() {
     if (this.data.openShare === false) {
