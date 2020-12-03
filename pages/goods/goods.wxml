@@ -109,6 +109,7 @@
     <template is="wxParse" data="{{wxParseData:goodsDetail.nodes}}"></template>
   </view>
 
+  <!-- 常见问题 -->
   <view class="common-problem">
     <view class="h">
       <view class="line"></view>
