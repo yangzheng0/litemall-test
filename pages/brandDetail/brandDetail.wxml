@@ -1,2 +1,8 @@
 <!--pages/brandDetail/brandDetail.wxml-->
-<text>pages/brandDetail/brandDetail.wxml</text>
+<view class="container">
+  <view class="brand-info">
+    <view class="name">
+      
+    </view>
+  </view>
+</view>

@@ -110,3 +110,12 @@
   height: auto;
   overflow: hidden;
 }
+
+.cate-item .item .price {
+  display: block;
+  width: 365.625rpx;
+  height: 30rpx;
+  text-align: center;
+  font-size: 30rxp;
+  color: #ab956d;
+}

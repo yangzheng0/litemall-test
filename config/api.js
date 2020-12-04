@@ -14,11 +14,14 @@ module.exports = {
   GoodsCount: WxApiRoot + 'goods/count', //统计商品总数
   GoodsCategory: WxApiRoot + 'goods/category', //获得分类数据
   GoodsDetail: WxApiRoot + 'goods/detail', //获得商品的详情
-  GoodsRelated: WxApiRoot + 'goods/related', //商品详情页的关联商品（大家都在看）
+  GoodsRelated: WxApiRoot + 'goods/related', //商品详情页的关联
+  GoodsList: WxApiRoot + 'goods/list', //获得商品列表商品（大家都在看）
 
   CartList: WxApiRoot + 'cart/index', //获取购物车的数据
   CartChecked: WxApiRoot + 'cart/checked', // 选择或取消选择商品
   CartUpdate: WxApiRoot + 'cart/update', // 更新购物车的商品
+
+  CouponReceive: WxApiRoot + 'coupon/receive', //优惠券领取
 
 
   UserIndex: WxApiRoot + 'user/index', //个人页面用户相关信息
