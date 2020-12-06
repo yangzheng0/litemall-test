@@ -1,2 +1,21 @@
 <!--pages/coupon/coupon.wxml-->
-<text>pages/coupon/coupon.wxml</text>
+<!-- <text>pages/coupon/coupon.wxml</text> -->
+<view class="container">
+  <scroll-view class="coupon-list" scroll-y="true" scroll-top="{{scrollTop}}">
+
+    <view class="item" wx:for="{{couponList}}" wx:for-index="index" wx:for-item="item" wx:key="id" bindtap="getCoupon" data-index="{item.id}">
+      <view class="tag">{{item.tag}}</view>
+      <view class="content">
+        <view class="left">
+          <view class="discount">
+            {{item.discount}}元
+          </view>
+          <view class="min">满{{item.min}}元使用</view>
+        </view>
+      </view>
+    </view>
+    <view class="page">
+
+    </view>
+  </scroll-view>
+</view>

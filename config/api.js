@@ -5,6 +5,9 @@ var WxApiRoot = 'http://localhost:9080/wx/';
 module.exports = {
   IndexUrl: WxApiRoot + 'home/index', //首页数据接口
 
+  BrandDetail: WxApiRoot + 'brand/detail', //品牌详情
+  BrandList: WxApiRoot + 'brand/list', //品牌列表
+
   CatalogList: WxApiRoot + 'catalog/index', //分类目录全部分类数据接口
   CatalogCurrent: WxApiRoot + 'catalog/current', //分类目录当前分类数据接口
   
@@ -22,6 +25,7 @@ module.exports = {
   CartUpdate: WxApiRoot + 'cart/update', // 更新购物车的商品
 
   CouponReceive: WxApiRoot + 'coupon/receive', //优惠券领取
+  CouponList: WxApiRoot + 'coupon/list', //优惠券列表
 
 
   UserIndex: WxApiRoot + 'user/index', //个人页面用户相关信息

@@ -1,18 +1,23 @@
 // pages/brand/brand.js
+var util = require('../../utils/util.js');
+var api = require('../../config/api.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    brandList:[],
+    page:1,
+    limit:10,
+    totalPages:1
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getBrandList();
   },
 
   /**
@@ -62,5 +67,24 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  getBrandList:function(){
+    wx.showLoading({
+      title: '加载中...',
+    })
+    let that = this;
+    util.request(api.BrandList,{
+      page:this.data.page,
+      limit:this.data.limit
+    }).then(function(res){
+      if(res.errno === 0) {
+        that.setData({
+          brandList:that.data.brandList.concat(res.data.list),
+          totalPages:res.data.pages
+        })
+      }
+
+      wx.hideLoading()
+    })
   }
 })

@@ -1,18 +1,29 @@
 // pages/brandDetail/brandDetail.js
+var util = require('../../utils/util.js');
+var api = require('../../config/api.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    brand:{},
+    id:0,
+    page:1,
+    limit:10,
+    goodsList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 页面初始化option为页面跳转所带来的参数
+    var that = this;
+    that.setData({
+      id: parseInt(options.id)
+    })
+    this.getBrand();
   },
 
   /**
@@ -62,5 +73,35 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  getBrand: function(){
+    let that = this;
+    util.request(api.BrandDetail,{
+      id:that.data.id
+    }).then(function(res){
+      if (res.errno === 0) {
+        that.setData({
+          brand:res.data
+        })
+      }
+
+      that.getGoodsList();
+    })
+  },
+
+  getGoodsList() {
+    var that = this
+
+    util.request(api.GoodsList,{
+      brandId:that.data.id,
+      page: that.data.page,
+      limit: that.data.limit
+    }).then(function(res){
+      if (res.errno === 0) {
+        that.setData({
+          goodsList: res.data.list
+        })
+      }
+    })
   }
 })
