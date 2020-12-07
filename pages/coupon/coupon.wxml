@@ -12,10 +12,20 @@
           </view>
           <view class="min">满{{item.min}}元使用</view>
         </view>
+        <view class="right">
+          <view class="name">{{item.name}}</view>
+          <view class="time" wx:if="{{item.days != 0}}">有效期：{{item.days}}天</view>
+          <view class="time" wx:else>有效期：{{item.startTime}} - {{item.endTime}}</view>
+        </view>
+        <view class="condition">
+          <text class="txt">{{item.desc}}</text>
+          <image src="{{item.pic}}" class="icon"></image>
+        </view>
       </view>
     </view>
-    <view class="page">
-
+    <view class="page" wx:if="showPage">
+      <view class="prev {{ page <= 1 ? 'disabled' : ''}}" bindtap="prevPage">上一页</view>
+      <view class="prev {{ count/limit <= page ? 'disabled' : ''}}" bindtap="nextPage">上一页</view>
     </view>
   </scroll-view>
 </view>

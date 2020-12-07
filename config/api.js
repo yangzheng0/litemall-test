@@ -27,6 +27,9 @@ module.exports = {
   CouponReceive: WxApiRoot + 'coupon/receive', //优惠券领取
   CouponList: WxApiRoot + 'coupon/list', //优惠券列表
 
+  
+  GroupOnList: WxApiRoot + 'groupon/list', //团购列表
+
 
   UserIndex: WxApiRoot + 'user/index', //个人页面用户相关信息
 }
