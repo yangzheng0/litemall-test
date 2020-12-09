@@ -9,15 +9,24 @@ Page({
   data: {
     bannerInfo:{
       'imgUrl':'/static/images/hot.png',
-      'name':'大家都在买的'
+      'name':'大家都在买的',
     },
+    categoryFilter:false,
+    page:1,
+    limit:10,
+    currentSortOrder: 'desc',
+    currentSort: 'add_time',
+    currentSortType: 'default',
+    categoryId:0,
+    goodsList:[],
+    filterCategory:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getGoodsList()
   },
 
   /**
@@ -106,6 +115,24 @@ Page({
     }
   },
   getGoodsList:function(){
-
+    var that = this
+    util.request(api.GoodsList,{
+      isHot:true,
+      page:that.data.page,
+      limit:that.data.limit,
+      order: that.data.currentSortOrder,
+      sort: that.data.currentSort,
+      categoryId: that.data.categoryId
+    }).then(function(res){
+      if (res.errno === 0){
+        that.setData({
+          goodsList:res.data.list,
+          filterCategory:res.data.filterCategoryList
+        })
+      }
+    })
+  },
+  selectCategory: function() {
+    
   }
 })

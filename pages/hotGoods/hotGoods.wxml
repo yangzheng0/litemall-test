@@ -19,10 +19,27 @@
       </view>
       <view class="item {{currentSortType == 'price' ? 'active' : ''}}" bindtap="openSortFilter" id="priceSort">
         <text class="txt">价格</text>
+        <van-icon name="arrow-up" wx:if="{{currentSortType == 'price' && currentSortOrder == 'asc'}}"></van-icon>
+        <van-icon name="arrow-down" wx:else="{{currentSortType == 'price' && currentSortOrder == 'desc'}}"></van-icon>
       </view>
       <view class="item {{currentSortType == 'category' ? 'active' : ''}}" bindtap="openSortFilter" id="categoryFilter">
         <text class="txt">分类</text>
       </view>
     </view>
+    <view class="sort-box-category" wx-if="{{categoryFilter}}">
+      <view class="item {{item.checked ? 'active' : ''}}" wx:for="{{filterCategory}}" wx:key="id" data-category-index="{{index}}" bindtap="selectCategory">{{item.name}}</view>
+    </view>
+  </view>
+
+  <view class="cate-item">
+    <class class="b">
+      <block wx:for="{{goodsList}}" wx:for-index="iindex" wx:for-item="iitem" wx:key="id">
+        <navigator class="item {{iindex % 2 == 0 ? 'item-b' : '' }}" url="../goods/goods?id={{iitem.id}}">
+          <image class="img" src="{{iitem.picUrl}}" background-size="cover"></image>
+          <text class="name">{{iitem.name}}</text>
+          <text class="price">{{iitem.retailPrice}}</text>
+        </navigator>
+      </block>
+    </class>
   </view>
 </view>
