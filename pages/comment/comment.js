@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    allCount: 0,
+    hasPicCount: 0,
+    comments:[]
   },
 
   /**

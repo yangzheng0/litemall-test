@@ -132,6 +132,17 @@ Page({
         url: "/pages/auth/login/login"
       })
     }
-  }
+  },
+
+  aboutUs: function () {
+    wx.navigateTo({
+      url: '/pages/about/about',
+    })
+  },
+  goFeedback: function () {
+    wx.navigateTo({
+      url: '/pages/comment/comment',
+    })
+  },
 
 })

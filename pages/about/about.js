@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    name:'litemall',
+    address:'https//github.vom/linlinjava/litemall',
+    phone: '021-xxxx-xxxx',
+    qq: '705144434'
   },
 
   /**
