@@ -1,11 +1,19 @@
 // pages/ucenter/feedback/feedback.js
+var util = require('../../../utils/util.js');
+var check = require('../../../utils/check.js');
+var api = require('../../../config/api.js');
+
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    array: ['请选择反馈类型', '商品相关', '功能异常', '优化建议', '其他'],
+    index: 0,
+    files:[],
+    content:'',
   },
 
   /**
@@ -62,5 +70,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  bindPickerChange: function(e) {
+    this.setData({
+      index: e.detail.value
+    })
   }
 })
