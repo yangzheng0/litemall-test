@@ -23,6 +23,7 @@ module.exports = {
   CartList: WxApiRoot + 'cart/index', //获取购物车的数据
   CartChecked: WxApiRoot + 'cart/checked', // 选择或取消选择商品
   CartUpdate: WxApiRoot + 'cart/update', // 更新购物车的商品
+  CartAdd: WxApiRoot + 'cart/add', // 添加商品到购物车
 
   CouponReceive: WxApiRoot + 'coupon/receive', //优惠券领取
   CouponList: WxApiRoot + 'coupon/list', //优惠券列表

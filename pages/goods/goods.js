@@ -30,7 +30,8 @@ Page({
     openAttr: false,
     isGroupon: false,
     checkedSpecPrice: 0,
-    attribute:[]
+    attribute:[],
+    soldout:false
   },
 
   /**
@@ -102,11 +103,11 @@ Page({
       id: that.data.id
     }).then(function(res){
       if (res.errno === 0) {
-        let _specificationList = res.data.productList;
+        let _specificationList = res.data.specificationList;
         let _tmpPicUrl = res.data.productList[0].url;
 
         // 如果仅存在一种货品，那么商品页面初始化时默认为checked
-
+        console.log(_specificationList)
         if (_specificationList.length == 1) {
           if (_specificationList[0].valueList.length == 1) {
             _specificationList[0].valueList[0].checked = true
@@ -127,7 +128,6 @@ Page({
             })
           }
         }
-
 
         that.setData({
           goods:res.data.info,
@@ -215,6 +215,214 @@ Page({
   closeAttr: function () {
     this.setData({
       openAttr: false
+    })
+  },
+
+  addToCart: function () {
+    var that = this;
+    if (this.data.openAttr == false) {
+      // 打开规格选择窗口
+      this.setData({
+        openAttr: !this.data.openAttr
+      })
+    } else {
+      // 提示选择完整规格
+      if (!this.isCheckedAllSpec()) {
+        util.showErrorToast("请选择完整规格")
+        return false;
+      }
+      debugger
+      // 根据选中的规格，判断是否有对应的sku信息
+      let checkedProductArray = this.getCheckedProductItem(this.getCheckedSpecKey())
+      if (!checkedProductArray || checkedProductArray.length <= 0) {
+        util.showErrorToast("没有库存");
+        return false;
+      }
+
+      let checkedProduct = checkedProductArray[0];
+      // 验证库存
+      if (checkedProduct.number <= 0) {
+        util.showErrorToast("没有库存")
+        return false
+      }
+
+      // 添加到购物车
+      util.request(api.CartAdd, {
+        goodsId: this.data.goods.id,
+        number: this.data.number,
+        productId: checkedProduct.id
+      }, "POST")
+      .then(function(res){
+        let _res = res;
+        if (_res.errno == 0) {
+          wx.showToast({
+            title: '添加成功',
+          }) 
+
+          that.setData({
+            openAttr: !that.data.openAttr,
+            cartGoodsCount: _res.data
+          })
+
+          if (that.data.userHasCollect == 1) {
+            that.setData({
+              collect: true
+            })
+          } else {
+            that.setData({
+              collect: false
+            })
+          }
+        } else {
+          util.showErrorToast(_res.errmsg)
+        }
+      })
+    }
+  },
+
+  clickSkuValue: function (event) {
+    let that = this;
+    let specName = event.currentTarget.dataset.name;
+    let specValueId = event.currentTarget.dataset.valueId;
+
+    // 判断是否可以点击
+
+    let _specificationList = this.data.specificationList;
+    for (let i = 0; i <_specificationList.length; i++) {
+      if (_specificationList[i].name === specName) {
+        for (let j = 0; j < _specificationList[i].valueList.length; j++) {
+          if (_specificationList[i].valueList[j].id == specValueId) {
+            // 如果选中，则反选
+            if (_specificationList[i].valueList[j].checked) {
+              _specificationList[i].valueList[j].checked = false;
+            } else {
+              _specificationList[i].valueList[j].checked = true;
+            }
+          } else {
+            _specificationList[i].valueList[j].checked = false;
+          }
+        }
+      }
+    }
+
+    this.setData({
+      specificationList: _specificationList,
+    });
+    //重新计算spec改变后的信息
+    this.changeSpecInfo();
+
+    //重新计算哪些值不可以点击
+  },
+
+  // 规格改变时，重新计算价格及显示信息
+  changeSpecInfo: function() {
+    let checkedNameValue = this.getCheckedSpecValue();
+
+    //设置选择的信息
+    let checkedValue = checkedNameValue.filter(function(v) {
+      if (v.valueId != 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }).map(function(v) {
+      return v.valueText;
+    });
+    if (checkedValue.length > 0) {
+      this.setData({
+        tmpSpecText: checkedValue.join('　')
+      });
+    } else {
+      this.setData({
+        tmpSpecText: '请选择规格数量'
+      });
+    }
+    
+    if (this.isCheckedAllSpec()) {
+      this.setData({
+        checkedSpecText: this.data.tmpSpecText
+      });
+
+      // 规格所对应的货品选择以后
+      let checkedProductArray = this.getCheckedProductItem(this.getCheckedSpecKey());
+      if (!checkedProductArray || checkedProductArray.length <= 0) {
+        this.setData({
+          soldout: true
+        });
+        console.error('规格所对应货品不存在');
+        return;
+      }
+
+      let checkedProduct = checkedProductArray[0];
+      //console.log("checkedProduct: "+checkedProduct.url);
+      if (checkedProduct.number > 0) {
+        this.setData({
+          checkedSpecPrice: checkedProduct.price,
+          tmpPicUrl: checkedProduct.url,
+          soldout: false
+        });
+      } else {
+        this.setData({
+          checkedSpecPrice: this.data.goods.retailPrice,
+          soldout: true
+        });
+      }
+
+    } else {
+      this.setData({
+        checkedSpecText: '规格数量选择',
+        checkedSpecPrice: this.data.goods.retailPrice,
+        soldout: false
+      });
+    }
+
+  },
+
+  //获取选中的规格信息
+  getCheckedSpecValue: function() {
+    let checkedValues = [];
+    let _specificationList = this.data.specificationList;
+    for (let i = 0; i < _specificationList.length; i++) {
+      let _checkedObj = {
+        name: _specificationList[i].name,
+        valueId: 0,
+        valueText: ''
+      };
+      for (let j = 0; j < _specificationList[i].valueList.length; j++) {
+        if (_specificationList[i].valueList[j].checked) {
+          _checkedObj.valueId = _specificationList[i].valueList[j].id;
+          _checkedObj.valueText = _specificationList[i].valueList[j].value;
+        }
+      }
+      checkedValues.push(_checkedObj);
+    }
+
+    return checkedValues;
+  },
+
+  //判断规格是否选择完整
+  isCheckedAllSpec: function() {
+    return !this.getCheckedSpecValue().some(function(v) {
+      if (v.valueId == 0) {
+        return true;
+      }
+    });
+  },
+
+  getCheckedSpecKey: function() {
+    let checkedValue = this.getCheckedSpecValue().map(function(v) {
+      return v.valueText;
+    })
+    return checkedValue
+  },
+
+  getCheckedProductItem: function(key) {
+    return this.data.productList.filter(function(v) {
+      if (v.specifications.toString() == key.toString()) {
+        return true
+      } else {
+        return false
+      }
     })
   }
 })

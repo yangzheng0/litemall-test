@@ -699,3 +699,144 @@
   font-size: 25rpx;
   color: #333;
 }
+
+.spec-con .value.disable {
+  border: 1px solid #ccc;
+  color: #ccc;
+}
+
+.spec-con .value.selected {
+  border: 1px solid #b4282d;
+  color: #b4282d;
+}
+
+.number-item .selnum {
+  width: 322rpx;
+  height: 71rpx;
+  border: 1px solid #ccc;
+  display: flex;
+}
+
+.number-item .cut {
+  width: 93.75rpx;
+  height: 100%;
+  text-align: center;
+  line-height: 65rpx;
+}
+.number-item .number {
+  flex:1;
+  height: 100%;
+  text-align: center;
+  line-height: 68.75rpx;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  float: left;
+}
+
+.number-item .add {
+  width: 93.75rpx;
+  height: 100%;
+  text-align: center;
+  line-height: 65rpx;
+}
+
+.bottom-btn {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 750rpx;
+  height: 100rpx;
+  display: flex;
+  background: #fff;
+}
+
+.bottom-btn .l {
+  float: left;
+  height: 100rpx;
+  width: 162rpx;
+  /* border: 1px solid #f4f4f4; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-btn .l.l-collect {
+  /* border-right: none;
+  border-left: none; */
+  text-align: center;
+  width: 90rpx;
+}
+
+.bottom-btn .l.l-collect .icon {
+  position: absolute;
+  top: 28rpx;
+  left: 20rpx;
+  font-size: 44rpx;
+}
+
+.bottom-btn .l.l-kefu {
+  position: relative;
+  height: 54rpx;
+  width: 63rpx;
+}
+
+.bottom-btn .l.l-cart .box {
+  position: relative;
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.bottom-btn .l.l.l-cart .cart-count {
+  height: 28rpx;
+  width: 28rpx;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #b4282d;
+  text-align: center;
+  font-size: 18rpx;
+  color: #fff;
+  line-height: 28rpx;
+  border-radius: 50%;
+}
+
+.bottom-btn .l.l-cart .icon {
+  position: absolute;
+  top: 10rpx;
+  left: 0;
+  font-size: 44rpx;
+}
+
+.bottom-btn .c {
+  float: left;
+  background: #b4282d;
+  height: 100rpx;
+  line-height: 96rpx;
+  flex: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.bottom-btn .r {
+  float: left;
+  background: #f48f18;
+  height: 100rpx;
+  line-height: 96rpx;
+  flex: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.bottom-btn .n {
+  float: left;
+  background: #d5d8d8e7;
+  height: 100rpx;
+  line-height: 96rpx;
+  flex: 1;
+  text-align: center;
+  color: rgb(37, 36, 36);
+}
+
+@import "../../lib/wxParse/wxParse.wxss";
