@@ -138,6 +138,7 @@ Page({
           brand:res.data.brand,
           checkedSpecPrice: res.data.info.retailPrice,
           specificationList: res.data.specificationList,
+          productList: res.data.productList,
           // 选择规格时，默认展示第一张图片
           tmpPicUrl: _tmpPicUrl
         })
@@ -231,7 +232,6 @@ Page({
         util.showErrorToast("请选择完整规格")
         return false;
       }
-      debugger
       // 根据选中的规格，判断是否有对应的sku信息
       let checkedProductArray = this.getCheckedProductItem(this.getCheckedSpecKey())
       if (!checkedProductArray || checkedProductArray.length <= 0) {
@@ -423,6 +423,11 @@ Page({
       } else {
         return false
       }
+    })
+  },
+  openCartPage: function() {
+    wx.switchTab({
+      url: '/pages/cart/cart'
     })
   }
 })

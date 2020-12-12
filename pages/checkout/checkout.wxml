@@ -1,2 +1,25 @@
-<!--pages/checkout/checkout.wxml-->
-<text>pages/checkout/checkout.wxml</text>
+<view class="container">
+  <view class="address-box">
+    <view class="address-item" bindtap="selectAddress" wx:if="{{checkedAddress.id > 0}}">
+      <view class="l">
+        <text class="name">{{checkedAddress.name}}</text>
+        <text class="default" wx:if="{{checkedAddress.isDefault}}">默认</text>
+      </view>
+      <view class="m">
+        <text class="mobile">{{checkedAddress.tel}}</text>
+        <text class="address">{{checkedAddress.addressDetail}}</text>
+      </view>
+      <view class="r">
+        <van-icon name="arrow" />
+      </view>
+    </view>
+    <view class="address-item address-empty" bindtap="selectAddress" wx:else>
+      <view class="m">
+        还没有收货地址，去添加
+      </view>
+      <view class="r">
+        <van-icon name="arrow" />      
+      </view>
+    </view>
+  </view>
+</view>

@@ -235,5 +235,29 @@ Page({
       cartGoods:this.data.cartGoods
     });
     this.updateCart(cartItem.productId,cartItem.goodsId,number,cartItem.id)
+  },
+  checkoutOrder:function() {
+    // 获取已选择的商品
+    let that = this;
+
+    var checkedGoods = this.data.cartGoods.filter(function(element,index,array){
+      if (element.checked == true) {
+        return true
+      }else {
+        return false
+      }
+    })
+
+    if (checkedGoods.length <= 0) {
+      return false;
+    }
+
+    // storage中设置了cartId,则是购物车购买
+    try{
+      wx.setStorageSync('cartId', 0)
+      wx.navigateTo({
+        url: '/pages/checkout/checkout',
+      })
+    }catch(e) {}
   }
 })

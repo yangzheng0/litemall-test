@@ -1,1 +1,99 @@
 /* pages/checkout/checkout.wxss */
+page {
+  height: 100%;
+  background: #f4f4f4;
+}
+text {
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.address-box {
+  width: 100%;
+  height: 166.55rpx;
+  background-size: 62.5rpx 10.5rpx;
+  margin-bottom: 20rpx;
+  padding-top: 10.5rpx;
+}
+
+.address-item{
+  display: flex;
+  height: 155.55rpx;
+  background: #fff;
+  padding:  41.6rpx 0 41.6rpx 31.25rpx;
+}
+
+.address-box .l .name {
+  margin-left: 6.25rpx;
+  margin-top: -7.25rpx;
+  display: block;
+  width: 125rpx;
+  height: 43rpx;
+  line-height: 43rpx;
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 5rpx;
+}
+
+.address-box .l .default {
+  margin-left: 6.25rpx;
+  border: 1rpx solid #b4282d;
+  display: block;
+  font-size: 20.5rpx;
+  line-height: 29rpx;
+  color: #b4282d;
+  width: 62rpx;
+  height: 33rpx;
+  text-align: center;
+}
+
+.address-box .m {
+  flex:1;
+  height: 72.25rpx;
+  color: #999;
+}
+
+.address-box .m .mobile {
+  display: block;
+  font-size: 30rpx;
+  margin-bottom: 6.25rpx;
+  height: 29rpx;
+  line-height: 29rpx;
+  color: #333;
+}
+
+.address-box .m .address {
+  display: block;
+  font-size: 25rpx;
+  color: #666;
+  height: 37.5rpx;
+  line-height: 37.5rpx;
+}
+
+.address-box .r{
+ float: right;
+ width: 77rpx;
+ height: 77rpx;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.address-box .r image{
+  width: 52.078rpx;
+  height: 52.078rpx;
+}
+
+.address-box .address-empty {
+  width: 100%;
+  height: 100%;
+}
+
+.address-box .address-empty .m {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+}

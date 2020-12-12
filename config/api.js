@@ -24,6 +24,7 @@ module.exports = {
   CartChecked: WxApiRoot + 'cart/checked', // 选择或取消选择商品
   CartUpdate: WxApiRoot + 'cart/update', // 更新购物车的商品
   CartAdd: WxApiRoot + 'cart/add', // 添加商品到购物车
+  CartCheckout: WxApiRoot + 'cart/checkout', // 下单前信息确认
 
   CouponReceive: WxApiRoot + 'coupon/receive', //优惠券领取
   CouponList: WxApiRoot + 'coupon/list', //优惠券列表
