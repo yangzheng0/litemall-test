@@ -34,4 +34,9 @@ module.exports = {
 
 
   UserIndex: WxApiRoot + 'user/index', //个人页面用户相关信息
+
+
+  TopicList: WxApiRoot + 'topic/list', //专题列表
+  TopicDetail: WxApiRoot + 'topic/detail', //专题详情
+  TopicRelated: WxApiRoot + 'topic/related', //相关专题
 }
