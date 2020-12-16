@@ -41,3 +41,94 @@
     width: 33rpx;
     height: 33rpx;
 }
+
+.comments .b {
+    height: auto;
+    width: 720rpx;
+}
+
+.comments .item {
+    height: auto;
+    width: 720rpx;
+    overflow: hidden;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.comments .info {
+    height: 127rpx;
+    width: 100%;
+    padding: 33rpx 0 27rpx 0;
+}
+
+.comments .user {
+    float: left;
+    width: auto;
+    height: 67rpx;
+    line-height: 67rpx;
+    font-size: 0;
+}
+.comments .user .avatar{
+   display: block;
+   float: left;
+   width: 67rpx;
+   height: 67rpx;
+   margin-right: 17rpx;
+   border-radius: 50%;
+}
+
+.comments .user .nickname {
+    display: block;
+    float: left;
+    width: auto;
+    height: 66rpx;
+    overflow: hidden;
+    font-size: 29rpx;
+    line-height: 66rpx;
+}
+
+.comments .time {
+    display: block;
+    float: right;
+    width: auto;
+    height: 67rpx;
+    line-height: 67rpx;
+    color: #7f7f7f;
+    font-size: 25rpx;
+    margin-right: 30rpx;
+}
+
+.comments .comment{
+    width: 720rpx;
+    padding-right: 30rpx;
+    line-height: 45.8rpx;
+    margin-bottom: 30rpx;
+    font-size: 29rpx;
+    color: #333;
+}
+
+.comments .load {
+    width: 720rpx;
+    height: 108rpx;
+    line-height: 108rpx;
+    text-align: center;
+    font-size: 38.5rpx;
+}
+
+.no-comments .txt {
+    height: 43rpx;
+    line-height: 43rpx;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 29rpx;
+    color: #7f7f7f;
+    padding-top: 150rpx;
+}
+
+.sv-goods {
+    width: 100%;
+    height: auto;
+    padding-left: 30rpx;
+    background: #fff;
+    margin-top: 20rpx;
+}

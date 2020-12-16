@@ -112,7 +112,7 @@ Page({
       limit:5
     }).then(function(res){
       if (res.errno === 0) {
-        this.setData({
+        that.setData({
           commentList: res.data.list,
           commentCount: res.data.total
         })

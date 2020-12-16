@@ -35,16 +35,12 @@
          <view class="item" wx:for="{{commentList}}" wx:key="id">
             <view class="info">
               <view class="user">
-                <image class="avatar" src="{{item.userInfo.avatarYrl}}"></image>
-                <text class="nickname">
-                  {{item.userInfo.nickName}}
-                </text>
+                <image class="avatar" src="{{item.userInfo.avatarUrl}}"></image>
+                <text class="nickname">{{item.userInfo.nickName}}</text>
               </view>
               <view class="time">{{item.addTime}}</view>
             </view>
-            <view class="comment">
-              {{item.centent}}
-            </view>
+            <view class="comment">{{item.content}}</view>
          </view>
        </view>
        <view class="load" wx:if="{{commentCount > 5}}">
