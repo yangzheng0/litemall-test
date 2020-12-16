@@ -132,3 +132,123 @@
     background: #fff;
     margin-top: 20rpx;
 }
+
+.topic-goods .h {
+    height: 93rpx;
+    line-height: 93rpx;
+    width: 720rpx;
+    padding-right: 30rpx;
+    border-bottom: 1px solid #d9d9d9;
+  }
+  
+.topic-goods .h .t {
+    display: block;
+    float: left;
+    width: 50%;
+    font-size: 29rpx;
+    color: #333;
+}
+
+.topic-goods .b .item {
+    border-top: 1px solid #d9d9d9;
+    margin: 0 20rpx;
+    height: 244rpx;
+    width: 710rpx;
+}
+
+.topic-goods .b .img {
+    margin-top: 12rpx;
+    margin-right: 12rpx;
+    float: left;
+    width: 220rpx;
+    height: 220rpx;
+}
+
+.topic-goods .b .right {
+    float: left;
+    height: 244rpx;
+    width: 476rpx;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.topic-goods .b .text {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    height: 244rpx;
+    width: 476rpx;
+}
+
+.topic-goods .b .name {
+    float: left;
+    width: 330rpx;
+    display: block;
+    color: #333;
+    line-height: 50rpx;
+    font-size: 30rpx;
+}
+
+.topic-goods .b .desc {
+    width: 476rpx;
+    display: block;
+    color: #999;
+    line-height: 50rpx;
+    font-size: 25rpx;
+}
+
+.topic-goods .b .price {
+    width: 476rpx;
+    display: flex;
+    color: #b4282d;
+    line-height: 50rpx;
+    font-size: 33rpx;
+}
+
+.rec-box {
+    width: 690rpx;
+    height: auto;
+    margin: 0 30rpx;
+}
+
+.rec-box .h {
+    position: relative;
+    width: 690rpx;
+    height: 96rpx;
+    margin-bottom: 32rpx;
+}
+
+.rec-box .h .txt {
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    /* justify-content: center; */
+    width: 100%;
+    background: #f4f4f4;
+    top: 59rpx;
+    height: 45rpx;
+    color: #999;
+    line-height: 45rpx;
+}
+
+.rec-box .b .item {
+    height: 350rpx;
+    width: 690rpx;
+    background: #fff;
+}
+
+.rec-box .b .item .img{
+    width: 640rpx;
+    height: 300rpx;
+    justify-content: center;
+    text-align: center;
+}
+
+.rec-box .b .item .title{
+    display: block;
+    height: 50rpx;
+    font-size: 30rpx;
+    line-height: 50rpx;
+}
