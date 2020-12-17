@@ -234,21 +234,28 @@
 }
 
 .rec-box .b .item {
-    height: 350rpx;
+    height: 380rpx;
     width: 690rpx;
     background: #fff;
+    text-align: center;
+    padding: 25rpx 25rpx 30rpx 24rpx;
 }
 
 .rec-box .b .item .img{
+    display: block;
     width: 640rpx;
     height: 300rpx;
-    justify-content: center;
-    text-align: center;
+    /* margin-left: 25rpx; */
+    /* justify-content: center; */
+    /* text-align: center; */
 }
 
 .rec-box .b .item .title{
+    margin-top: 10rpx;
     display: block;
     height: 50rpx;
-    font-size: 30rpx;
+    font-size: 35rpx;
     line-height: 50rpx;
+    text-align: center;
 }
+@import "../../lib/wxParse/wxParse.wxss";

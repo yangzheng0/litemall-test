@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    allCount:0,
+    hasCount:0,
+    showType:1
   },
 
   /**
@@ -62,5 +64,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  switchTab() {
+    this.setData({
+      showType:0
+    })
   }
 })

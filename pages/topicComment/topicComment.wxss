@@ -1,1 +1,25 @@
 /* pages/topicComment/topicComment.wxss */
+.comments{
+  width: 100%;
+  height: auto;
+}
+
+.comments .h {
+  display: flex;
+}
+
+.comments .h .item{
+  width: 50%;
+  text-align: center;
+  padding-top: 30rpx;
+  height: 100rpx;
+  border-bottom: 5rpx solid #d9d9d9;
+}
+
+.comments .h .item .active{
+  color: ab2b2b;
+}
+
+.comments .h .item .txt {
+  font-size: 30rpx;
+}

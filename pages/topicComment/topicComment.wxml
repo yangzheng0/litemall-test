@@ -1,2 +1,12 @@
 <!--pages/topicComment/topicComment.wxml-->
-<text>pages/topicComment/topicComment.wxml</text>
+<!-- <text>pages/topicComment/topicComment.wxml</text> -->
+<view class="comments">
+  <view class="h">
+    <view class="item {{ showType == 0 ? 'active' : ''}}" bindtap="switchTab">
+      <view class="txt">全部({{allCount}})</view>
+    </view>
+    <view class="item {{ showType == 0 ? 'active' : ''}}" bindtap="switchTab">
+      <view class="txt">有图({{hasCount}})</view>
+    </view>
+  </view>
+</view>
