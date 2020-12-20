@@ -16,10 +16,79 @@
   border-bottom: 5rpx solid #d9d9d9;
 }
 
-.comments .h .item .active{
-  color: ab2b2b;
+.comments .h .item.active .txt{
+  color: #ab2b2b;
 }
 
 .comments .h .item .txt {
   font-size: 30rpx;
+}
+
+.comments .b {
+  width: 720rpx;
+  height: auto;
+  padding-left: 35rpx;
+}
+
+.comments .b .item {
+  height: auto;
+  border-bottom: 1rpx solid #d9d9d9;
+  padding-bottom: 45rpx;
+}
+
+.comments .b .item .info {
+  display: flex;
+  height: 120rpx;
+  align-items: center;
+}
+
+.comments .b .item .info .user{
+  flex: 1;
+  align-items: center;
+}
+
+.comments .b .item .info .user image{
+  height: 70rpx;
+  width: 70rpx;
+  border-radius: 35rpx;
+}
+
+.comments .b .item .info .user text {
+  position: absolute;
+  height: 70rpx;
+  font-size: 30rpx;
+  line-height: 70rpx; 
+  margin-left: 20rpx;
+}
+
+.comments .b .item .info .time {
+  font-size: 25rpx;
+  color: #7f7f7f;
+}
+
+.comments .imgs .img {
+  height: 150rpx;
+  width: 150rpx;
+  margin-right: 28rpx;
+}
+
+.comments .customer-service {
+  width: 690rpx;
+  height: auto;
+  overflow: hidden;
+  margin-top: 23rpx;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 21rpx;
+}
+
+.comments .customer-service .u {
+  font-size: 24rpx;
+  color: #333;
+  line-height: 37.5rpx;
+}
+
+.comments .customer-service .c {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 37.5rpx;
 }

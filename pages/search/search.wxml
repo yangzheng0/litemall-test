@@ -1,2 +1,15 @@
 <!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<!-- <text>pages/search/search.wxml</text> -->
+<scroll-view class="container" style="height:100%;">
+  <view class="search-header">
+    <view class="input-box">
+    <van-icon name="search"></van-icon>
+    
+    <input name="input" class="keyword" focus="true" value="{{keyword}}" confirm-type="search" bindinput="inputChange" bindfocus="inputFocus" bindconfirm="onKeywordConfirm" placeholder="{{defaultKeyword.keyword}}" />
+
+    <van-icon class="del" wx:if="{{keyword}}" bindtap="clearKeyword" name="cross"></van-icon>
+  </view>
+  <view class="right" bindtap="closeSearch">取消</view>
+  </view>
+  
+</scroll-view>

@@ -41,4 +41,5 @@ module.exports = {
   TopicRelated: WxApiRoot + 'topic/related', //相关专题
 
   CommentList: WxApiRoot + 'comment/list', //评论列表
+  CommentCount: WxApiRoot + 'comment/count', //评论总数
 }
