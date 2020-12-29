@@ -42,4 +42,7 @@ module.exports = {
 
   CommentList: WxApiRoot + 'comment/list', //评论列表
   CommentCount: WxApiRoot + 'comment/count', //评论总数
+
+  SearchHelper: WxApiRoot + 'search/helper', //搜索帮助
+  SearchIndex: WxApiRoot + 'search/index', //搜索关键字
 }
